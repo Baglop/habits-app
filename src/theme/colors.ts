@@ -4,4 +4,6 @@ export const COLORS = {
   morning: '#FFBA7C',
   fog: '#FFDEEF',
   eclipse: '#573353',
+  white:'#FFFFFF',
+  background:'#FFF3E9'
 };
