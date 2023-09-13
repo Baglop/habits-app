@@ -1,13 +1,9 @@
 import React, {ReactNode} from 'react';
 import {StyleSheet, Text, View, ViewStyle} from 'react-native';
 import {COLORS} from '../../../theme/colors';
+import {BaseCardProps} from '../types';
 
-interface CardProps {
-  children: ReactNode;
-  style?: ViewStyle;
-}
-
-const BaseCard = ({children, style}: CardProps) => {
+const BaseCard = ({children, style}: BaseCardProps) => {
   return <View style={[cardStyle.container, style]}>{children}</View>;
 };
 

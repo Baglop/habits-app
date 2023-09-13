@@ -1,21 +1,24 @@
 import React, {ReactNode} from 'react';
 import {CardVariant} from '../../types/CardVariant';
 import BaseCard from './components/BaseCard';
-import {ViewStyle} from 'react-native';
 import HalfCard from './components/HalfCard';
+import {BaseCardProps, ButtoninHeaderCardProps} from './types';
+import ButtoninHeaderCard from './components/ButtonsInHeaderCard';
 
-type Props = {
-  variant?: keyof typeof CardVariant;
-  style?: ViewStyle;
-  children: ReactNode;
-};
+interface Props {
+  variant: keyof typeof CardVariant;
+}
 
-const Card = (props: Props) => {
+type CardProps = Props & BaseCardProps & ButtoninHeaderCardProps;
+
+const Card = (props: CardProps) => {
   switch (props.variant) {
     case 'default':
       return <BaseCard {...props} />;
     case 'half':
       return <HalfCard {...props} />;
+    case 'header_buttons':
+      return <ButtoninHeaderCard {...props} />;
     default:
       return <BaseCard {...props} />;
   }
